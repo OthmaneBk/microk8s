@@ -16,6 +16,15 @@ jobs:
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 154.144.237.194 >> ~/.ssh/known_hosts
+      # Ensure Docker Compose is installed
+      - name: Ensure Docker Compose is installed
+        run: |
+          if ! docker-compose --version; then
+            echo "Docker Compose is not installed."
+          else
+            echo "Docker Compose is already installed."
+          fi
+
       - name: deploy the app
         run: |
 

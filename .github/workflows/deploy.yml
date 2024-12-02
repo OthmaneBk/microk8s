@@ -1,0 +1,27 @@
+name: deploy flask app
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 154.144.237.194 >> ~/.ssh/known_hosts
+      - name: deploy the app
+        run: |
+
+          ssh -i ~/.ssh/id_rsa adminesisa@154.144.237.194 << 'EOF'
+          {git clone git@github.com:M-Lahmer/flask-ms.git ; cd /home/adminesisa; }
+          git pull origin main
+          docker-compose down
+          docker-compose up -d --build
+          EOF

@@ -1,0 +1,25 @@
+services:
+  backend:
+    build:
+      context: .
+    container_name: backend
+    ports:
+      - "8080:5000"
+    depends_on:
+      - db
+      - cache
+  db:
+    image: postgres:alpine
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DATABASE=db_ms
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ../data:/var/lib/postgresql/data:rw
+  cache:
+    container_name: redis
+    image: redis

@@ -19,12 +19,13 @@ jobs:
       # Ensure Docker Compose is installed
       - name: Ensure Docker Compose is installed
         run: |
+          ssh -i ~/.ssh/id_rsa adminesisa@154.144.237.194 << 'EOF'
           if ! docker-compose --version; then
             echo "Docker Compose is not installed."
           else
             echo "Docker Compose is already installed."
           fi
-
+          EOF
       - name: deploy the app
         run: |
 

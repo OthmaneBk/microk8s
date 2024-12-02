@@ -28,12 +28,14 @@ jobs:
           fi
           EOF
       - name: deploy the app
+        env:
+          SUDO_PASS: ${{ secrets.SUDO_PASSWORD }}
         run: |
 
           ssh -i ~/.ssh/id_rsa adminesisa@154.144.237.194 << 'EOF'
           git clone git@github.com:M-Lahmer/flask-ms.git 
           cd flask-ms
           git pull origin main
-          docker-compose down
-          docker-compose up -d --build
+          echo "$SUDO_PASSWORD" |sudo -S docker-compose down
+          echo "$SUDO_PASSWORD" |sudo -Sdocker-compose up -d --build
           EOF

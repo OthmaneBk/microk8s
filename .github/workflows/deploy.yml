@@ -37,5 +37,5 @@ jobs:
           cd flask-ms
           git pull origin main
           echo "$SUDO_PASSWORD" |sudo -S docker-compose down
-          echo "$SUDO_PASSWORD" |sudo -Sdocker-compose up -d --build
+          echo "$SUDO_PASSWORD" |sudo -S docker-compose up -d --build
           EOF

@@ -20,6 +20,7 @@ jobs:
       - name: Ensure Docker Compose is installed
         run: |
           ssh -i ~/.ssh/id_rsa adminesisa@154.144.237.194 << 'EOF'
+          cd /home/adminesisa/ 
           if ! docker-compose --version; then
             echo "Docker Compose is not installed."
           else
@@ -30,7 +31,7 @@ jobs:
         run: |
 
           ssh -i ~/.ssh/id_rsa adminesisa@154.144.237.194 << 'EOF'
-          cd /home/adminesisa/ || { git clone git@github.com:M-Lahmer/flask-ms.git /home/adminesisa; cd /home/adminesisa; }
+          cd /home/adminesisa/ || { git clone git@github.com:M-Lahmer/flask-ms.git /home/adminesisa; cd /home/adminesisa/flask-ms; }
           git pull origin main
           docker-compose down
           docker-compose up -d --build

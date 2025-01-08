@@ -9,7 +9,7 @@ docoker, github actions, and k8s
 - download and install locally kompose : https://github.com/kubernetes/kompose/blob/main/docs/installation.md#docker
 - convert your compose.yaml, you must see 1 configmap file, three deployment and services files
 
-# deploy in K8s
+# Step 3 deploy in K8s
 - Check if microk8s is running
 - Verify your nodes, pods, deployement and services (one node and no pods)
 - First problem to resolve : backend image is a private one so tou must register it (in docker hube or locally in mikrok8s)

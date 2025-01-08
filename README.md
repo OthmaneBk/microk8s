@@ -4,6 +4,7 @@ docoker, github actions, and k8s
 # Step 1 docker compose
 - clone this project in your local machine (choose the mounted directory in multipass )
 - run the app in your multipass primary and test it using curl you must see hello from docker
+- take a look at the source code and create your test plan (from database to endpoints)
 - as soon as it is ok make down to your containers
 # Step 2 convert dcoker compose to configmap, deployment and services
 - download and install locally kompose : https://github.com/kubernetes/kompose/blob/main/docs/installation.md#docker
@@ -19,4 +20,4 @@ docoker, github actions, and k8s
 - Test from inside the cluster you must see hello from docker
 - What about from outside your cluster find the error and correct it and test again
 
-Good lucky 
+Good lucky you are free to use gpt

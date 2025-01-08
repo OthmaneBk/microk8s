@@ -9,6 +9,6 @@ CREATE TABLE IF NOT EXISTS T_USER(
     password VARCHAR(30)
 );
 
-INSERT INTO TABLE T_USER ('esisa@esisa.ac.ma', 1234);
+INSERT INTO T_USER (email, password) VALUES ('esisa@esisa.ac.ma', '1234');
 
-INSERT INTO TABLE T_USER ('test@esisa.ac.ma', 1234);
+INSERT INTO  T_USER (email, password) VALUES ('test@esisa.ac.ma', '1234');

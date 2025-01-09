@@ -15,7 +15,7 @@ def users():
     if isinstance(cnx,connection) :
         cursor=cnx.cursor()
         cursor.execute('SELECT * FROM T_USER;')
-        return f'<html><center><h1 style="color:blue">{jsonify(cursor.fetchall())}</h1></center></html>'
+        return jsonify(cursor.fetchall())
     return f'<html><center><h1 style="color:blue">Connection Error</h1></center></html>'
 
 if __name__ == '__main__':

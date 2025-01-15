@@ -21,6 +21,8 @@ docoker, github actions, and k8s
 - What about from outside your cluster find the error and correct it and test again
 - 
   use NodePort as type and nodePort: 32600
+  
     kompose convert -f compose.yaml
+  
     D:\Othmane\4eme\Cloud_et_IoT\Cloud_et_IoT\flask-ms>kompose convert -f compose.yaml
         

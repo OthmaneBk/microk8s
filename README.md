@@ -20,4 +20,13 @@ docoker, github actions, and k8s
 - Test from inside the cluster you must see hello from docker
 - What about from outside your cluster find the error and correct it and test again
 
-Good lucky you are free to use gpt
+Good lucky you are free to use gpt  
+
+    kompose convert -f compose.yaml
+    D:\Othmane\4eme\Cloud_et_IoT\Cloud_et_IoT\flask-ms>kompose convert -f compose.yaml
+
+    primary 
+        sudo microk8s kubectl delete svc 1,2,3 
+        sudo microk8s kubectl delete deployement 1,2,3
+    cd flask-ms
+        

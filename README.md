@@ -19,7 +19,7 @@ docoker, github actions, and k8s
 - Apply all the remaining files and check that all is ok
 - Test from inside the cluster you must see hello from docker
 - What about from outside your cluster find the error and correct it and test again
-
+  use NodePort as type and nodePort: 32600
     kompose convert -f compose.yaml
     D:\Othmane\4eme\Cloud_et_IoT\Cloud_et_IoT\flask-ms>kompose convert -f compose.yaml
         
